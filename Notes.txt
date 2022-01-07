@@ -2,3 +2,28 @@ Backend
 --------
     Express and Mongoose
         npm i express mongoose
+
+    Go to mongodb.com
+        => create a cluster
+        => click connect
+            > connect your application
+            > copy the db url "mongodb+srv://<username>:<password>@cluster0.1d1jv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    
+    create index.js
+
+    To run Backend "node filename.js"
+
+    create a .env file so that your mongodb url can be private
+        npm i dotenv
+        and config it in index.js
+
+    Two files are created under models for "pin" and "user" to create schema
+
+    Two files are created under routes for "pin" and "user"
+        where models are imported
+        and the routes are imported in index.js
+        now using postman data can be posted into db
+
+    Password is created and verified using bycrpt
+        const bcrypt = require('bcrypt');
+        npm i bcrypt
