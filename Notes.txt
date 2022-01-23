@@ -27,3 +27,13 @@ Backend
     Password is created and verified using bycrpt
         const bcrypt = require('bcrypt');
         npm i bcrypt
+
+Frontend
+--------
+    For map we are using mapbox.com
+        Create a env file and copy the mapbox token from accounts tab
+        npm add react-map-gl
+        (refer react-map-gl website)
+    For Icon we are using material-ui 
+        npm i @material-ui/core @material-ui/icons
+    

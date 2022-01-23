@@ -1,0 +1,29 @@
+.card{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+label{
+    color: cornflowerblue;
+    font-size: 14px;
+    border-bottom: .5px solid cornflowerblue;
+    margin: 3px 0px;
+}
+.place{
+    margin: 0px;
+}
+.review{
+    margin: 0px;
+    font-size: 15px;
+}
+.star{
+    color: gold;
+}
+.username{
+    font-size: 15px;
+}
+.date{
+    font-size: 13px;
+}
