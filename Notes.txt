@@ -36,4 +36,14 @@ Frontend
         (refer react-map-gl website)
     For Icon we are using material-ui 
         npm i @material-ui/core @material-ui/icons
+    For time ago
+        use timeago.js package
+        npm i timeago.js
+
+Calling Backend server in Frontend
+----------------------------------
+    In package.json
+        Add proxy(url of Backend server)
+    Install axios
+        npm i axios
     
