@@ -8,7 +8,9 @@ import './Map.css';
 
 
 function Map() {
+    const currentUser = 'athu'
     const [pins, setPins] = useState([])
+    const [currentPlaceId, setCurrentPlaceId] = useState(null)
     const [viewport, setViewport] = useState({
         width: '100vw',
         height: '100vh',
@@ -22,6 +24,10 @@ function Map() {
         setShowPopup(true);
     }
 
+    const handleMarkerClick = (id) => {
+        setCurrentPlaceId(id);
+    }
+
     useEffect(() => {
         const getPins = async () => {
             try {
@@ -33,8 +39,6 @@ function Map() {
         };
         getPins();
     }, [])
-
-    console.log(pins)
 
     return (
         <ReactMapGL
@@ -52,15 +56,19 @@ function Map() {
                         offsetTop={-10}
                         onClick={handlePopup}
                     >
-                        <Room style={{ fontSize: viewport.zoom * 5, color: 'red' }}></Room>
+                        <Room 
+                            style={{ 
+                                    fontSize: viewport.zoom * 5, 
+                                    color: pin.username === currentUser ? 'tomato' : 'slateblue' , 
+                                    cursor: 'pointer'}}
+                            onClick={() => handleMarkerClick(pin._id)}
+                        />
                     </Marker>
-                    {showPopup &&
+                    {pin._id === currentPlaceId &&
                         <Popup
                             latitude={pin.latitude}
                             longitude={pin.longitude}
-                            closeButton={true}
-                            closeOnClick={false}
-                            onClose={() => setShowPopup(false)}
+                            onClose={() => setCurrentPlaceId(null)}
                             anchor="bottom" >
                             <div className='card'>
                                 <label>Place</label>
@@ -71,8 +79,8 @@ function Map() {
                                 <div className='rating'>
                                     <Star className='star' /><Star className='star' /><Star className='star' /><Star className='star' /><Star className='star' />
                                 </div>
-                                <label>Info</label>
-                                <span className='username'>Created by <b>{pin.user}</b></span>
+                                <label>Information</label>
+                                <span className='username'>Created by <b>{pin.username}</b></span>
                                 <span className='date'>{format(pin.createdAt)}</span>
                             </div>
                         </Popup>
