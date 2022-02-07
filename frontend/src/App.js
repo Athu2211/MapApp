@@ -1,10 +1,8 @@
-import Map from "./Map";
-import Header from "./Header";
+import Map from "./components/Map";
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-        <Header />
         <Map />
     </div>
   );
