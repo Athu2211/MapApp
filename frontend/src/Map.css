@@ -1,31 +1,75 @@
-.card{
+.card {
     width: 200px;
     height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-label{
+
+label {
     width: max-content;
     color: cornflowerblue;
     font-size: 15px;
     border-bottom: 1px solid cornflowerblue;
     margin: 3px 0px;
 }
-.place{
+
+.place {
     margin: 0px;
 }
-.review{
+
+.review {
     margin: 0px;
     font-size: 15px;
 }
-.star{
+
+.star {
     font-size: 16px !important;
     color: gold;
 }
-.username{
+
+.username {
     font-size: 15px;
 }
-.date{
+
+.date {
     font-size: 13px;
+}
+
+form {
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+input, textarea {
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+input::placeholder, textarea::placeholder {
+    font-size: 12px;
+    color: gray;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.add-button {
+    background: cornflowerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+select {
+    border: 1px solid gray;
 }
