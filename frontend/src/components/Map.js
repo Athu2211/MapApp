@@ -23,7 +23,7 @@ function Map() {
     const [viewport, setViewport] = useState({
         latitude: 21.7679,
         longitude: 78.8718,
-        zoom: 6,
+        zoom: 4,
     });
     const [settings, setsettings] = useState({
         scrollZoom: false,
