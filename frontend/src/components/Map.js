@@ -74,6 +74,16 @@ function Map() {
 
     }
 
+    const handleShowLogin = () => {
+        setShowLogin(true);
+        setShowRegister(false);
+    }
+
+    const handleShowRegister = () => {
+        setShowRegister(true);
+        setShowLogin(false);
+    }
+
     useEffect(() => {
         const getPins = async () => {
             try {
@@ -175,8 +185,8 @@ function Map() {
                     (<button className='button logout' onClick={handleLogout}>LogOut</button>) :
                     (
                         <div className="buttons">
-                            <button className='button login' onClick={() => setShowLogin(true)}>LogIn</button>
-                            <button className='button register' onClick={() => setShowRegister(true)}>Register</button>
+                            <button className='button login' onClick={handleShowLogin}>LogIn</button>
+                            <button className='button register' onClick={handleShowRegister}>Register</button>
                         </div>
                     )}
                 {showRegister && <Register setShowRegister={setShowRegister} />}
